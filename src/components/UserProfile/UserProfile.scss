@@ -1,0 +1,106 @@
+#profile_wrapper {
+    border-bottom: 1px solid rgb(47, 51, 54);
+}
+.userprofile {
+    & > * {
+        margin: 0 12px 14px 12px;
+    }
+    &__background {
+        margin: 0 0 10px 0;
+        max-width: 100%;
+        max-height: 200px;
+        width: 100%;
+        height: 100%;
+        & img {
+            max-height: 200px;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__wrapper-1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-height: 48px;
+    }
+    &__avatar {
+        transform: translateY(-60%);
+        & img {
+            width: 133.5px;
+            height: 133.5px;
+            border-radius: 50%;
+            border: 4px solid black;
+        }
+    }
+    &__button_edit {
+        padding: 8px 16px;
+        flex: 0 0 auto;
+        background-color: black;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 50px;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        transition-duration: 0.2s;
+        &:hover {
+            transition-duration: 0.2s;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+    &__name {
+        margin-bottom: 2px;
+        font-size: 20px;
+        font-weight: bold;
+        color: rgba(217, 217, 217, 1);
+    }
+    &__nickname {
+        font-size: 18px;
+        color: rgba(217, 217, 217, 0.5);
+    }
+    &__description {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 20px;
+        color: rgba(217, 217, 217, 0.8);
+    }
+    &__registration-date {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        & svg {
+            max-width: 18.75px;
+            max-height: 18.75px;
+            width: 100%;
+            height: 100%;
+            margin: 0 4px 0 0;
+            fill: rgba(217, 217, 217, 0.5);
+        }
+        & span {
+            font-size: 16px;
+            font-weight: normal;
+            color: rgba(217, 217, 217, 0.5);
+        }
+    }
+    &__wrapper-2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        font-size: 16px;
+        color: rgba(217, 217, 217, 0.5);
+    }
+    &__in-reading {
+        margin: 0 20px 0 0;
+        & span {
+            font-weight: bold;
+            color: white;
+        }
+    }
+    &__readers {
+        & span {
+            font-weight: bold;
+            color: white;
+        }
+    }
+}

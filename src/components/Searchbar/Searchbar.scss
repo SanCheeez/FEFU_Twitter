@@ -1,0 +1,31 @@
+.searchbar {
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(32, 35, 39, 1);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    &__loop {
+        padding: 2px;
+        margin: 0 15px 0 0;
+        max-width: 24px;
+        max-height: 24px;
+        height: 100%;
+        width: 100%;
+        & svg {
+            width: 100%;
+            fill: rgba(118, 118, 118, 1);
+        }
+    }
+    &__input {
+        width: 100%;
+        background-color: rgba(32, 35, 39, 1);
+        & input {
+            height: 100%;
+            width: 100%;
+            font-size: 16px;
+            color: white;
+            background-color: rgba(32, 35, 39, 1);
+        }
+    }
+}
