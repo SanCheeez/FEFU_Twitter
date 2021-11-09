@@ -1,5 +1,4 @@
 import React from "react"
-import { Icons } from '../Icons/Icons'
 import cat from '../../img/Cat.jpg'
 import './TweetPost.scss'
 import { TweetPostMedia } from "../Icons/TweetPostMedia"
