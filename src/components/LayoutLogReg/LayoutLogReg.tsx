@@ -1,6 +1,5 @@
 import React, { ReactChildren, ReactNode } from "react";
 import { TwitterLogo } from "../Icons/TwitterLogo";
-import { InputField } from "../InputField/InputField";
 import './LayoutLogReg.scss'
 
 interface Props {

@@ -1,5 +1,4 @@
 import React from "react";
-import { TwitterLogo } from "../Icons/TwitterLogo";
 import { InputField } from "../InputField/InputField";
 import { LayoutLogReg } from "../LayoutLogReg/LayoutLogReg";
 

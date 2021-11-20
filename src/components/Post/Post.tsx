@@ -7,6 +7,7 @@ import { PostComment } from '../Icons/PostComment'
 import { PostRetweet } from '../Icons/PostRetweet'
 import { PostLike } from '../Icons/PostLike'
 import { PostShare } from '../Icons/PostShare'
+
 interface Props {
     name: string;
     nickname: string;

@@ -1,11 +1,15 @@
 import React from "react";
-import './UserProfile.scss'
 import cat from '../../img/Cat.jpg'
 import background from '../../img/cat_in_space.jpg'
 import { RegistrationDate } from '../Icons/RegistrationDate'
 import { UserProfileButtons } from "./UserProfileButtons/UserProfileButtons";
+import './UserProfile.scss'
 
-export const UserProfile = (): JSX.Element => {
+interface Name {
+    name?: string;
+}
+
+export const UserProfile = ({ name = 'Cat Simon' }: Name): JSX.Element => {
     return (
         <div id='profile_wrapper'>
             <div className='userprofile'>
@@ -14,7 +18,7 @@ export const UserProfile = (): JSX.Element => {
                     <div className="userprofile__avatar"><img src={cat} alt="" /></div>
                     <button className="userprofile__button_edit">Изменить профиль</button>
                 </div>
-                <div className="userprofile__name">Cat Simon</div>
+                <div className="userprofile__name">{name}</div>
                 <div className="userprofile__nickname">@SuperCat</div>
                 <div className="userprofile__description">
                     <p>

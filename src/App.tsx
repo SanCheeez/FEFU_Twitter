@@ -4,24 +4,25 @@ import { UserPage } from './components/Pages/UserPage';
 import { Login } from './components/Login/Login';
 import { Register } from './components/Register/Register';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-
 import './App.scss'
-
 
 function App(): JSX.Element {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/home">
+        <Route path="/home" exact>
           <HomePage />
         </Route>
-        <Route path="/profile">
+        <Route path="/profile" exact>
           <UserPage />
         </Route>
-        <Route path="/login">
+        <Route path="/profile/:login" exact>
+          <UserPage />
+        </Route>
+        <Route path="/login" exact>
           <Login />
         </Route>
-        <Route path="/register">
+        <Route path="/register" exact>
           <Register />
         </Route>
         <Redirect to="/home" />
