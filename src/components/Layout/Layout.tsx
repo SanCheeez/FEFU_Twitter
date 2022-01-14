@@ -7,6 +7,7 @@ import './Layout.scss'
 type Props = {
     title: string;
     children: React.ReactNode
+    set_actual_and_searchbar?: boolean
 }
 
 function Layout(props: Props): JSX.Element {
@@ -16,7 +17,7 @@ function Layout(props: Props): JSX.Element {
             <NewsFeed title={props.title} >
                 {props.children}
             </NewsFeed>
-            <SidebarRight />
+            <SidebarRight set_actual_and_search={props.set_actual_and_searchbar} />
         </div>
     );
 }

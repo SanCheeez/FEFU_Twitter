@@ -2,7 +2,7 @@ import React from "react";
 import './SidebarButtons.scss'
 import { TwitterLogo } from '../../Icons/TwitterLogo'
 import { SidebarMain } from '../../Icons/SidebarMain'
-import { SidebarReview } from '../../Icons/SidebarReview'
+import { SidebarExplore } from '../../Icons/SidebarExplore'
 import { SidebarNotifications } from '../../Icons/SidebarNotifications'
 import { SidebarMessages } from '../../Icons/SidebarMessages'
 import { SidebarBookmarks } from '../../Icons/SidebarBookmarks'
@@ -16,7 +16,7 @@ export const SidebarButtons = (): JSX.Element => {
         <>
             <Link to="/home" className="menu-button"><button><div><TwitterLogo /><span></span></div></button></Link>
             <Link to="/home" className="menu-button"><button><div><SidebarMain /><span>Главная</span></div></button></Link>
-            <Link to="/review" className="menu-button"><button><div><SidebarReview /><span>Обзор</span></div></button></Link>
+            <Link to="/explore" className="menu-button"><button><div><SidebarExplore /><span>Обзор</span></div></button></Link>
             <Link to="/notifications" className="menu-button"><button><div><SidebarNotifications /><span>Уведомления</span></div></button></Link>
             <Link to="/messages" className="menu-button"><button><div><SidebarMessages /><span>Сообщения</span></div></button></Link>
             <Link to="/bookmarks" className="menu-button"><button><div><SidebarBookmarks /><span>Закладки</span></div></button></Link>

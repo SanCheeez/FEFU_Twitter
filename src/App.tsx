@@ -8,6 +8,7 @@ import { NotificationPage } from './components/Pages/NotificationPage';
 import './App.scss'
 import { MentionList } from './components/Notifications/MentionList/MentionList';
 import { NotificationList } from './components/Notifications/NotificationList/NotificationList';
+import { ExplorePage } from './components/Pages/ExplorePage';
 
 function App(): JSX.Element {
   return (
@@ -16,6 +17,11 @@ function App(): JSX.Element {
         <Route path="/home" exact>
           <HomePage />
         </Route>
+
+        <Route path="/explore" exact>
+          <ExplorePage />
+        </Route>
+
         <Route path="/notifications" exact>
           <NotificationPage>
             <NotificationList />
@@ -26,18 +32,30 @@ function App(): JSX.Element {
             <MentionList />
           </NotificationPage>
         </Route>
+
         <Route path="/profile" exact>
           <UserPage />
         </Route>
         <Route path="/profile/:login" exact>
           <UserPage />
         </Route>
+        <Route path="/profile/with_replies" exact>
+          <UserPage />
+        </Route>
+        <Route path="/profile/media" exact>
+          <UserPage />
+        </Route>
+        <Route path="/profile/likes" exact>
+          <UserPage />
+        </Route>
+
         <Route path="/login" exact>
           <Login />
         </Route>
         <Route path="/register" exact>
           <Register />
         </Route>
+
         <Redirect to="/home" />
       </Switch>
     </BrowserRouter>

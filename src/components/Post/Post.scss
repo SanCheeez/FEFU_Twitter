@@ -82,6 +82,12 @@
                 & svg {
                     fill: rgba(111, 111, 121, 1);
                 }
+                &_liked {
+                    & svg {
+                        fill: rgba(255, 28, 128, 1);
+                        stroke: rgba(255, 28, 128, 1);
+                    }
+                }
                 padding: 8px;
                 border-radius: 50%;
                 transition: ease-in-out 0.2s;

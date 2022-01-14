@@ -1,6 +1,6 @@
 import React from "react"
 import './Post.scss'
-import image from '../../img/Klevch.jpg'
+import image from '../../img/common_picture.png'
 import cat from '../../img/Cat.jpg'
 import { DotsMore } from '../Icons/DotsMore'
 import { PostComment } from '../Icons/PostComment'
@@ -9,13 +9,14 @@ import { PostLike } from '../Icons/PostLike'
 import { PostShare } from '../Icons/PostShare'
 
 interface Props {
-    name: string;
-    nickname: string;
-    time: string;
-    text: string;
+    name: string
+    nickname: string
+    time: string
+    text: string
+    liked: boolean
 }
 
-export const Post = ({ name, nickname, time, text }: Props) => {
+export const Post = ({ name, nickname, time, text, liked }: Props) => {
     return (
         <div className="post">
             <div className="post__photo"><img src={cat} alt="" /></div>
@@ -32,7 +33,7 @@ export const Post = ({ name, nickname, time, text }: Props) => {
                 <div className="main__actions actions">
                     <div className="actions__item"><PostComment /></div>
                     <div className="actions__item"><PostRetweet /></div>
-                    <div className="actions__item"><PostLike /></div>
+                    <div className={liked ? "actions__item actions__item_liked" : "actions__item"}><PostLike /></div>
                     <div className="actions__item"><PostShare /></div>
                 </div>
             </div>
