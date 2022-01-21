@@ -7,7 +7,7 @@ export const UserPage = (): JSX.Element => {
     const { login } = useParams<{ login?: string }>();
     return (
         <Layout title="Профиль" >
-            <UserProfile name={login} />
+            <UserProfile name={login} in_reading="12900" readers="1002002" />
         </Layout>
     );
 }

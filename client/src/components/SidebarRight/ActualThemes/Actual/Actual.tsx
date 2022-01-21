@@ -4,7 +4,8 @@ import './Actual.scss'
 
 interface Props {
     title: string,
-    name: string
+    theme: string,
+    tweets?: number,
 }
 
 export const Actual = (props: Props): JSX.Element => {
@@ -12,7 +13,8 @@ export const Actual = (props: Props): JSX.Element => {
         <div className="actual-theme">
             <div className="actual-theme__content content">
                 <div className="content__title">{props.title}</div>
-                <div className="content__name">{props.name}</div>
+                <div className="content__name">{props.theme}</div>
+                <div className="content__tweets">Твитов: {props.tweets}</div>
             </div>
             <div className="actual-theme__dots"><DotsMore /></div>
         </div>

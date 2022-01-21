@@ -16,9 +16,9 @@ export const ActualThemes = ({ is_explore = false }: Props): JSX.Element => {
                     <div className="actual__settings"><Settings /></div>
                 </div>
                 <div className="actual__themes">
-                    <Actual title="Актуальные темы: Россия" name="#локдаун" />
-                    <Actual title="Актуальные темы: Россия" name="Meta" />
-                    <Actual title="Актуальные темы: Россия" name="Рашкина" />
+                    <Actual title="Актуальные темы: Россия" theme="#локдаун" tweets={123} />
+                    <Actual title="Актуальные темы: Россия" theme="Meta" />
+                    <Actual title="Актуальные темы: Россия" theme="Рашкина" tweets={1012} />
                     <div className="actual__more">Показать ещё</div>
                 </div>
             </div>
@@ -30,11 +30,11 @@ export const ActualThemes = ({ is_explore = false }: Props): JSX.Element => {
                     <div className="actual__text">Актуальные темы для вас</div>
                 </div>
                 <div className="actual__themes">
-                    <Actual title="Актуальные темы: Россия" name="#локдаун" />
-                    <Actual title="Актуальные темы: Россия" name="Meta" />
-                    <Actual title="Актуальные темы: Россия" name="Рашкина" />
-                    <Actual title="Новый альбом" name="Оксимирон" />
-                    <Actual title="Актуальные темы: ДВФУ" name="The shuttle" />
+                    <Actual title="Актуальные темы: Россия" theme="#локдаун" />
+                    <Actual title="Актуальные темы: Россия" theme="Meta" />
+                    <Actual title="Актуальные темы: Россия" theme="Рашкина" />
+                    <Actual title="Новый альбом" theme="Оксимирон" />
+                    <Actual title="Актуальные темы: ДВФУ" theme="The shuttle" />
                     <div className="actual__more actual__more_explore">Показать ещё</div>
                 </div>
             </div>

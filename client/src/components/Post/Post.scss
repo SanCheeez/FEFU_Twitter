@@ -91,7 +91,7 @@
                 padding: 8px;
                 border-radius: 50%;
                 transition: ease-in-out 0.2s;
-                &:nth-child(1):hover {
+                &_comment:hover {
                     transition: ease-in-out 0.2s;
                     background-color: rgba(29, 155, 240, 0.1);
                     & svg {
@@ -99,7 +99,7 @@
                         fill: rgba(29, 155, 240, 1);
                     }
                 }
-                &:nth-child(2):hover {
+                &_retweet:hover {
                     transition: ease-in-out 0.2s;
                     background-color: rgba(7, 224, 124, 0.1);
                     & svg {
@@ -107,7 +107,7 @@
                         fill: rgba(7, 224, 124, 1);
                     }
                 }
-                &:nth-child(3):hover {
+                &_like:hover {
                     transition: ease-in-out 0.2s;
                     background-color: rgba(244, 28, 128, 0.1);
                     & svg {
@@ -115,7 +115,7 @@
                         fill: rgba(244, 28, 128, 1);
                     }
                 }
-                &:nth-child(4):hover {
+                &_share:hover {
                     transition: ease-in-out 0.2s;
                     background-color: rgba(29, 155, 240, 0.1);
                     & svg {
@@ -123,6 +123,15 @@
                         fill: rgba(29, 155, 240, 1);
                     }
                 }
+            }
+            &__container {
+                display: flex;
+            }
+            &__numbers {
+                display: inline-block;
+                margin-top: 15px;
+                font-size: 12px;
+                color: rgba(217, 217, 217, 0.5);
             }
         }
     }

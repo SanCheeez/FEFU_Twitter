@@ -62,7 +62,7 @@
         font-size: 16px;
         font-weight: normal;
         line-height: 20px;
-        color: rgba(217, 217, 217, 0.8);
+        color: rgba(217, 217, 217, 0.9);
     }
     &__registration-date {
         display: flex;
@@ -93,14 +93,12 @@
     &__in-reading {
         margin: 0 20px 0 0;
         & span {
-            font-weight: bold;
-            color: white;
+            color: rgba(217, 217, 217, 0.9);
         }
     }
     &__readers {
         & span {
-            font-weight: bold;
-            color: white;
+            color: rgba(217, 217, 217, 0.9);
         }
     }
 }
