@@ -2,6 +2,8 @@ import { Document } from "mongoose";
 
 export default interface IUser extends Document {
     id: String,
+    email: String,
+    password: String,
     avatar: String,
     background: String,
     name: String,

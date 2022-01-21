@@ -7,6 +7,7 @@ import { UserRouter } from './Routers/UserRouter';
 import { PostRouter } from './Routers/PostRouter';
 import { ActualRouter } from './Routers/ActualRouter';
 import { SearchRouter } from './Routers/SearchRouter';
+import { AuthRouter } from './Routers/AuthRouter'
 
 const app = express();
 app.use(cors());
@@ -23,6 +24,7 @@ app.use('/user', UserRouter);
 app.use('/post', PostRouter);
 app.use('/actual', ActualRouter);
 app.use('/search', SearchRouter);
+app.use('/api', AuthRouter);
 
 app.listen(PORT, () => {
     console.log(`Example app listening at http://localhost:${PORT}`);

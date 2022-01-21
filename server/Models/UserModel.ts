@@ -2,18 +2,18 @@ import mongoose, { Schema } from "mongoose";
 import IUser from "../Interfaces/UserInterface";
 
 const UserSchema: Schema = new Schema({
-    id: String,
-    email: String,
-    password: String,
-    avatar: String,
-    background: String,
-    name: String,
-    nickname: String,
-    description: String,
-    month: String,
-    year: String,
-    in_reading: String,
-    readers: String,
+    id: { type: String, required: false },
+    email: { type: String, required: true },
+    password: { type: String, required: true },
+    avatar: { type: String, required: false },
+    background: { type: String, required: false },
+    name: { type: String, required: true },
+    nickname: { type: String, required: false },
+    description: { type: String, required: false },
+    month: { type: String, required: false },
+    year: { type: String, required: false },
+    in_reading: { type: String, default: "0" },
+    readers: { type: String, default: "0" },
 })
 
 export default mongoose.model<IUser>('Users', UserSchema, 'Users');
