@@ -1,6 +1,6 @@
 import React from "react"
 import './Post.scss'
-import image from '../../img/common_picture.png'
+import default_image from '../../img/common_picture.png'
 import cat from '../../img/Cat.jpg'
 import { DotsMore } from '../Icons/DotsMore'
 import { PostComment } from '../Icons/PostComment'
@@ -9,17 +9,17 @@ import { PostLike } from '../Icons/PostLike'
 import { PostShare } from '../Icons/PostShare'
 
 interface Props {
-    id?: string,
-    avatar?: string,
-    image?: string,
-    date: string,
-    text: string,
-    name: string,
-    nickname: string,
-    comments?: number,
-    retweets?: number,
-    likes?: number,
-    is_liked: boolean,
+    id?: string | String,
+    avatar?: string | String,
+    image?: string | String,
+    date: string | String,
+    text: string | String,
+    name: string | String,
+    nickname: string | String,
+    comments?: number | Number,
+    retweets?: number | Number,
+    likes?: number | Number,
+    is_liked: boolean | Boolean,
 }
 
 export const Post = (props: Props) => {
@@ -35,7 +35,7 @@ export const Post = (props: Props) => {
                     <div className="main__header_dots"><DotsMore /></div>
                 </div>
                 <p className="main__text">{props.text}</p>
-                <div className='main__photo'><img src={image} alt="Картинка не загрузилась" /></div>
+                <div className='main__photo'><img src={props.image !== "" ? (props.image)?.toString() : default_image} alt="Картинка не загрузилась" /></div>
                 <div className="main__actions actions">
                     <div className="actions__container">
                         <div className="actions__item actions__item_comment"><PostComment /></div>

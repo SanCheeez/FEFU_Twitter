@@ -45,7 +45,6 @@ export const UserProfile = (props: Props): JSX.Element => {
                 </div>
             </div>
             <UserProfileButtons />
-            {props.children}
         </div>
     )
 }

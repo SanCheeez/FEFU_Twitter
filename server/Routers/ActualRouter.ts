@@ -10,9 +10,9 @@ export const ActualRouter: Router = express.Router();
 ActualRouter.get('/', (req: Request, res: Response) => {
     Actual.find({}, (err: Error, actuals: [IActual]) => {
         if (err) {
-            res.send('Нет актуальных новостей');
+            res.status(404).send('Нет актуальных новостей');
         } else {
-            res.send(actuals);
+            res.status(200).json(actuals);
         }
     })
     // const actual_json = fs.readFileSync('./JSON/actual.json');
