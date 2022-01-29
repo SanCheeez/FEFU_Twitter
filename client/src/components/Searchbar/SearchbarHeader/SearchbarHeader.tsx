@@ -3,10 +3,14 @@ import { Settings } from "../../Icons/Settings";
 import { Searchbar } from "../Searchbar";
 import "./SearchbarHeader.scss"
 
-export const SearchbarHeader = (): JSX.Element => {
+interface Props {
+    onChange?: () => void
+}
+
+export const SearchbarHeader = (props: Props): JSX.Element => {
     return (
         <div className="searchbar-header">
-            <Searchbar />
+            <Searchbar onChange={() => props.onChange ? props.onChange() : console.log("Не удалось вызвать функцию")} />
             <div className="ic-settings"><Settings /></div>
         </div>
     );

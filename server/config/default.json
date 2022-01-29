@@ -1,5 +1,5 @@
 {
-    "port": 8000,
+    "port": 5001,
     "jwtSecret": "dog can dance",
     "mongoUrl": "mongodb+srv://SanCheez:Sasha3278@cluster0.yugsv.mongodb.net/app?retryWrites=true&w=majority"
 }

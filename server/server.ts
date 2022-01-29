@@ -13,7 +13,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 8000;
+const PORT = 5001;
 
 const url = 'mongodb+srv://SanCheez:Sasha3278@twitterdb.nbkoh.mongodb.net/TwitterDB?retryWrites=true&w=majority';
 
