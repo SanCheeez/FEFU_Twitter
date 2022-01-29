@@ -1,15 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../Layout/Layout";
 import { TweetPost } from "../TweetPost/TweetPost";
 import { Post } from "../Post/Post";
+import axios from "axios";
+
+const api = axios.create({
+    baseURL: "http://localhost:8000"
+});
+
+interface IPost {
+    id?: string | String,
+    avatar?: string | String,
+    image?: string,
+    date: string | String,
+    text: string | String,
+    name: string | String,
+    nickname: string | String,
+    comments?: number | Number,
+    retweets?: number | Number,
+    likes?: number | Number,
+    is_liked: boolean | Boolean,
+}
 
 export const HomePage = (): JSX.Element => {
+    const [posts, setPosts] = useState<Array<IPost>>([]);
+    const allPosts = async () => {
+        const response = await api.get('/post');
+        setPosts(response.data);
+    }
+    useEffect(() => {
+        allPosts();
+    }, [])
     return (
         <Layout title="Главная" >
             <TweetPost />
-            <Post name='NoName' nickname='2N' date='7 ч' text='МАТАН МАТАН МАТАН МАТАН МАТАН МАТАН' comments={128} retweets={12} likes={55} is_liked={false} />
-            <Post name='John Smith' nickname='John Smith' date='12 ч' text='Я снялся в фильме' comments={18} likes={5} is_liked={true} />
-            <Post name='Elon Mask' nickname='SpaceX' date='25 минут' text='Мы выпустили новый автомобиль' comments={1128} retweets={1223} likes={1235} is_liked={true} />
+            {posts.map(post => <Post {...post} />)}
         </Layout>
     );
 }

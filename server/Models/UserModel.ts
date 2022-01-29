@@ -10,8 +10,8 @@ const UserSchema: Schema = new Schema({
     name: { type: String, required: true },
     nickname: { type: String, required: false },
     description: { type: String, required: false },
-    month: { type: String, required: false },
-    year: { type: String, required: false },
+    month: { type: String, required: false, default: "октябрь" },
+    year: { type: String, required: false, default: "2021" },
     in_reading: { type: String, default: "0" },
     readers: { type: String, default: "0" },
 })

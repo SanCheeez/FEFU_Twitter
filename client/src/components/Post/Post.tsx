@@ -11,7 +11,7 @@ import { PostShare } from '../Icons/PostShare'
 interface Props {
     id?: string | String,
     avatar?: string | String,
-    image?: string | String,
+    image?: string,
     date: string | String,
     text: string | String,
     name: string | String,

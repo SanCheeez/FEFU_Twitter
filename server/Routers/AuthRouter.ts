@@ -65,9 +65,9 @@ AuthRouter.post(
             }
 
             const { email, password } = req.body
-
+            console.log(email, password)
             const user = await UserModel.findOne({ email })
-
+            console.log(user)
             if (!user) {
                 return res.status(400).json({ message: 'Пользователь не найден' })
             }
@@ -77,14 +77,10 @@ AuthRouter.post(
             if (!isMatch) {
                 return res.status(400).json({ message: 'Неверный пароль, попробуйте снова' })
             }
-
-            const token = jwt.sign(
-                { userId: user.id },
-                config.get('jwtSecret'),
-                { expiresIn: '1h' }
-            )
-
-            res.status(200).json({ token, userId: user.id })
+            res.status(200).json({
+                name: user.name,
+                email: user.email
+            })
         } catch (e) {
             res.status(500).json({ message: 'Непредвиденная ошибка' })
         }
