@@ -4,7 +4,7 @@ import IPost from "../Interfaces/PostInterface";
 const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
-    id: { type: String, required: false },
+    id: { type: String, required: false, unique: true },
     avatar: { type: String, required: false, default: "./img/UserAvatars/user1.jpg" },
     image: { type: String, required: false, default: "" },
     date: { type: String, default: "1 янв." },

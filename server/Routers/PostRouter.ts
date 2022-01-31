@@ -18,13 +18,6 @@ PostRouter.get('/', (req: Request, res: Response) => {
             res.send(posts);
         }
     })
-    // const posts_json = fs.readFileSync('./JSON/posts.json');
-    // const posts = JSON.parse(posts_json).map(FormatPost);
-    // let all_posts = "";
-    // for (let item of posts) {
-    //     all_posts += item;
-    // }
-    // res.send(all_posts);
 })
 //TODO: Написать запрос для получения твитта по его ID
 PostRouter.get('/:id', (req: Request, res: Response) => {
@@ -35,9 +28,6 @@ PostRouter.get('/:id', (req: Request, res: Response) => {
             res.send(post);
         }
     })
-    // const posts_json = fs.readFileSync('./JSON/posts.json');
-    // const posts = JSON.parse(posts_json).filter((item) => item.id === req.params.id);
-    // res.send(FormatPost(posts[0]));
 })
 //TODO: Написать POST запрос для отправки твитта (пока никуда записывать его не надо, нужно просто вернуть отправвленные данные назад)
 PostRouter.post('/', urlencodedParser, (req: Request, res: Response) => {
@@ -47,7 +37,4 @@ PostRouter.post('/', urlencodedParser, (req: Request, res: Response) => {
         name: req.body.name,
     })
     newPost.save((err: unknown) => res.send(err));
-    // const name = req.body.name;
-    // const responseMessage = "Post " + name + "!";
-    // res.send(responseMessage);
 })

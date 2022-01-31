@@ -1,11 +1,13 @@
 import axios from "axios";
 import React, { ReactChildren, ReactNode, useState } from "react";
+import { Link } from "react-router-dom";
 import { TwitterLogo } from "../Icons/TwitterLogo";
 import './LayoutLogReg.scss'
 
 interface Props {
     title: string;
     btn_text: string;
+    redirect_text: string;
     is_login?: boolean;
     children: ReactChildren | ReactNode;
     name?: string;
@@ -17,14 +19,13 @@ const api = axios.create({
     baseURL: "http://localhost:5001/api"
 })
 
-export const LayoutLogReg = ({ title, btn_text, is_login = false, children, name = "", email = "", password = "" }: Props): JSX.Element => {
+export const LayoutLogReg = ({ title, btn_text, redirect_text, is_login = false, children, name = "", email = "", password = "" }: Props): JSX.Element => {
     const Login = async () => {
         const response = await api.post('/login', {
             email: email,
             password: password
         })
-        console.log(response)
-        localStorage.setItem("user", JSON.stringify(response.data))
+        console.log(response.data)
     }
     const Register = async () => {
         const response = await api.post('/register', {
@@ -32,7 +33,7 @@ export const LayoutLogReg = ({ title, btn_text, is_login = false, children, name
             email: email,
             password: password
         })
-        console.log(response)
+        console.log(response.data)
     }
     return (
         <div className="log-reg">
@@ -43,6 +44,8 @@ export const LayoutLogReg = ({ title, btn_text, is_login = false, children, name
             </div>
             {is_login === true ? <button className="log-reg__button" type="submit" onClick={() => Login()}>{btn_text}</button> :
                 <button className="log-reg__button" type="submit" onClick={() => Register()}>{btn_text}</button>}
+            {is_login === true ? <div className="log-reg__redirect"><Link to={"/register"} >{redirect_text}</Link></div> :
+                <div className="log-reg__redirect"><Link to={"/login"} >{redirect_text}</Link></div>}
         </div>
     );
 }

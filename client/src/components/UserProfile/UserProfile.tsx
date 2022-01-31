@@ -6,7 +6,6 @@ import { UserProfileButtons } from "./UserProfileButtons/UserProfileButtons";
 import './UserProfile.scss'
 
 interface Props {
-    id?: string,
     avatar?: string,
     background?: string,
     name?: string,

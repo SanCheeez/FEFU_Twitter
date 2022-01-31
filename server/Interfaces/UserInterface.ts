@@ -1,7 +1,6 @@
 import { Document } from "mongoose";
 
 export default interface IUser extends Document {
-    id: String,
     email: String,
     password: String,
     avatar: String,
@@ -11,6 +10,6 @@ export default interface IUser extends Document {
     description: String,
     month: String,
     year: String,
-    in_reading: String,
     readers: String,
+    in_reading: String,
 }
