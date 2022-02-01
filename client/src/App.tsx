@@ -8,13 +8,13 @@ import { NotificationPage } from './components/Pages/NotificationPage';
 import { MentionList } from './components/Notifications/MentionList/MentionList';
 import { NotificationList } from './components/Notifications/NotificationList/NotificationList';
 import { ExplorePage } from './components/Pages/ExplorePage';
-import { useAuth } from './Hooks/AuthHook';
+import { useAuth } from './hooks/AuthHook';
 import { AuthContext } from './context/AuthContext';
 import './App.scss'
 
 interface IAuth {
   token?: string | null,
-  userId: string | null,
+  userId?: string | null,
   login?: (token: string, id: string) => void,
   logout?: () => void
 }
@@ -22,6 +22,7 @@ interface IAuth {
 function App(): JSX.Element {
   const { token, userId, login, logout }: IAuth = useAuth()
   const isAuth: boolean = !!token
+  console.log(isAuth)
 
   return (
     <AuthContext.Provider value={{
@@ -65,7 +66,7 @@ function App(): JSX.Element {
               <UserPage />
             </Route>
 
-            <Redirect to="/home" />
+            <Redirect to="/home" exact />
           </Switch>
           :
           <Switch>
@@ -76,7 +77,7 @@ function App(): JSX.Element {
               <Register />
             </Route>
 
-            <Redirect to="/register" />
+            <Redirect to="/register" exact />
           </Switch>}
       </BrowserRouter>
     </AuthContext.Provider>

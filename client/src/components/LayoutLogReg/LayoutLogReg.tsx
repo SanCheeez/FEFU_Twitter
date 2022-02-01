@@ -1,6 +1,7 @@
 import axios from "axios";
-import React, { ReactChildren, ReactNode, useState } from "react";
+import React, { ReactChildren, ReactNode, useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 import { TwitterLogo } from "../Icons/TwitterLogo";
 import './LayoutLogReg.scss'
 
@@ -20,11 +21,15 @@ const api = axios.create({
 })
 
 export const LayoutLogReg = ({ title, btn_text, redirect_text, is_login = false, children, name = "", email = "", password = "" }: Props): JSX.Element => {
+    const auth = useContext(AuthContext)
+
     const Login = async () => {
         const response = await api.post('/login', {
             email: email,
             password: password
         })
+        if (auth.login)
+            auth.login(response.data.token, response.data.id)
         console.log(response.data)
     }
     const Register = async () => {

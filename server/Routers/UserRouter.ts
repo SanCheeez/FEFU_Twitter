@@ -6,10 +6,10 @@ import IUser from '../Interfaces/UserInterface';
 export const UserRouter: Router = express.Router();
 
 //TODO: Возращать данные из какого-нибудь статичного JSON файла или простого JS объекта по ID пользователя и выводить на экран его никнейм.
-UserRouter.get('/:email', (req: Request, res: Response) => {
-    Users.findOne({ email: req.params.email }, (err: Error, user: IUser) => {
+UserRouter.get('/:id', (req: Request, res: Response) => {
+    Users.findOne({ _id: req.params.id }, (err: Error, user: IUser) => {
         if (err) {
-            res.send('Пользователь не найден');
+            res.status(404).json({ message: 'Пользователь не найден' });
             console.log(err);
         } else {
             res.send(user);

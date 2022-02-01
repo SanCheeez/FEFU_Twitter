@@ -82,13 +82,14 @@ AuthRouter.post(
             }
 
             const token = jwt.sign(
-                { userId: user._id },
+                { userId: user.id },
                 "dog can dance",
                 { expiresIn: '1h' }
             )
 
             res.status(200).json({
                 token: token,
+                id: user.id,
                 name: user.name,
                 email: user.email
             })

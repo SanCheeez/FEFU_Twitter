@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 
 interface IAuth {
     token?: string | null,
-    userId: string | null,
+    userId?: string | null,
     login?: (token: string, id: string) => void,
     logout?: () => void
 }
@@ -16,12 +16,12 @@ export const useAuth = (): IAuth => {
     const [token, setToken] = useState<string | null>(null)
     const [userId, setUserId] = useState<string | null>(null)
 
-    const login = useCallback((jwtToken: string, id: string) => {
+    const login = useCallback((jwtToken: string | null, id: string | null) => {
         setToken(jwtToken)
         setUserId(id)
         localStorage.setItem('user', JSON.stringify({
-            id: userId,
-            token: token
+            id,
+            token: jwtToken
         }))
     }, [])
 
