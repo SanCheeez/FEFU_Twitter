@@ -1,5 +1,4 @@
 import React from "react";
-import './SidebarButtons.scss'
 import { TwitterLogo } from '../../Icons/TwitterLogo'
 import { SidebarMain } from '../../Icons/SidebarMain'
 import { SidebarExplore } from '../../Icons/SidebarExplore'
@@ -10,6 +9,7 @@ import { SidebarLists } from '../../Icons/SidebarLists'
 import { SidebarProfile } from '../../Icons/SidebarProfile'
 import { SidebarMore } from '../../Icons/SidebarMore'
 import { Link } from "react-router-dom";
+import './SidebarButtons.scss'
 
 export const SidebarButtons = (): JSX.Element => {
     return (

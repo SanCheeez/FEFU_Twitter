@@ -5,21 +5,20 @@ import { Post } from "../Post/Post";
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://localhost:8000"
+    baseURL: "http://localhost:5001"
 });
 
 interface IPost {
-    id?: string | String,
-    avatar?: string | String,
+    avatar?: string,
     image?: string,
-    date: string | String,
-    text: string | String,
-    name: string | String,
-    nickname: string | String,
-    comments?: number | Number,
-    retweets?: number | Number,
-    likes?: number | Number,
-    is_liked: boolean | Boolean,
+    date: string,
+    text: string,
+    name: string,
+    nickname: string,
+    comments?: number,
+    retweets?: number,
+    likes?: number,
+    is_liked: boolean,
 }
 
 export const HomePage = (): JSX.Element => {

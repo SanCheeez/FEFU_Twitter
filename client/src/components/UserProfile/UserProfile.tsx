@@ -6,7 +6,6 @@ import { UserProfileButtons } from "./UserProfileButtons/UserProfileButtons";
 import './UserProfile.scss'
 
 interface Props {
-    id?: string,
     avatar?: string,
     background?: string,
     name?: string,
@@ -23,9 +22,9 @@ export const UserProfile = (props: Props): JSX.Element => {
     return (
         <div id='profile_wrapper'>
             <div className='userprofile'>
-                <div className="userprofile__background"><img src={props.background !== (null || undefined) ? props.background : background} alt="" /></div>
+                <div className="userprofile__background"><img src={props.background !== (null || undefined) ? background : props.background} alt="" /></div>
                 <div className="userprofile__wrapper-1">
-                    <div className="userprofile__avatar"><img src={props.avatar !== (null || undefined) ? props.avatar : cat} alt="" /></div>
+                    <div className="userprofile__avatar"><img src={props.avatar !== (null || undefined) ? cat : props.avatar} alt="" /></div>
                     <button className="userprofile__button_edit">Изменить профиль</button>
                 </div>
                 <div className="userprofile__name">{props.name !== (null || undefined) ? props.name : "Cat Simon"}</div>

@@ -4,7 +4,7 @@ import IActual from "../Interfaces/ActualInterface";
 const Schema = mongoose.Schema;
 
 const ActualSchema = new Schema({
-    id: { type: String, required: false },
+    id: { type: String, required: false, unique: true },
     theme: { type: String, default: "Русский хип-хоп" },
     title: { type: String, default: "Oxxxymiron" },
     tweets: { type: Number, default: 0 }

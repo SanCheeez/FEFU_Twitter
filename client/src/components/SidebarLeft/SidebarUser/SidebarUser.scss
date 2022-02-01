@@ -1,0 +1,58 @@
+.user {
+    display: flex;
+    flex-direction: row;
+    border-radius: 50px;
+    background-color: inherit;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-top: 8vh;
+    width: 100%;
+    &:hover {
+        transition-duration: 0.2s;
+        background-color: rgba(217, 217, 217, 0.1);
+        & button {
+            background-color: rgba(217, 217, 217, 0);
+        }
+    }
+    &__avatar {
+        flex: 1 0 calc(2 / 4);
+        max-width: 48px;
+        max-height: 48px;
+        width: 100%;
+        height: 100%;
+        margin: 0 12px 0 0;
+        & img {
+            width: 100%;
+            border-radius: 50%;
+        }
+    }
+    &__names {
+        flex: 1 0 calc(1 / 4);
+        text-align: left;
+    }
+    &__name {
+        margin: 0 0 2px 0;
+        font-size: 14px;
+        font-weight: bold;
+        color: rgba(217, 217, 217, 1);
+    }
+    &__nickname {
+        font-size: 14px;
+        color: rgba(217, 217, 217, 0.5);
+    }
+    &__dots {
+        flex: 1 0 calc(1 / 4);
+        max-width: 30px;
+        max-height: 30px;
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+        border-radius: 50%;
+        & svg {
+            width: 100%;
+            height: 100%;
+            fill: rgba(217, 217, 217, 1);
+        }
+    }
+}

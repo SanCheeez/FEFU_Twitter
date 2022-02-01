@@ -34,7 +34,6 @@ export const UserProfileButtons = (): JSX.Element => {
 
     return (
         <div>
-            {console.log(currentButton)}
             <div className="profile-buttons">
                 <button onClick={() => setCurrentButton("tweets")} className={currentButton === "tweets" ? "profile-buttons__tweets profile-buttons__tweets_active" : "profile-buttons__tweets"}>Твиты</button>
                 <button onClick={() => setCurrentButton("with_replies")} className={currentButton === "with_replies" ? "profile-buttons__tweets-with-replies profile-buttons__tweets-with-replies_active" : "profile-buttons__tweets-with-replies"}>Твиты и ответы</button>

@@ -1,6 +1,7 @@
 import React from "react";
-import './SidebarLeft.scss'
 import { SidebarButtons } from "./SidebarButtons/SidebarButtons";
+import { SidebarUser } from "./SidebarUser/SidebarUser";
+import './SidebarLeft.scss'
 
 export const SidebarLeft = (): JSX.Element => {
     return (
@@ -9,6 +10,7 @@ export const SidebarLeft = (): JSX.Element => {
                 <SidebarButtons />
             </div>
             <button className="sidebar-left__button">Твитнуть</button>
+            <SidebarUser />
         </div>
     );
 }
